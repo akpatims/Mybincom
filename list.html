@@ -1,0 +1,10 @@
+<h1>Task List</h1>
+{% for media in media_objects %}
+ {% if media.type=='image'  %}
+   <img src="{{media.file.url}}" alt="Image">
+ {% elif media.type == 'video' %}
+  <video src="{{media.file.url}}"controls></video>
+  {% elif media.type =='audio' %}
+    <audio src="{{ media.file.url}}"controls></audio>
+    {% endif %}
+  {% endfor %}
